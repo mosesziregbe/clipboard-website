@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-strongCyan: oklch(0.71 0.122 179.57); /*----- hsl(171, 66%, 44%) */
+  --color-lightBlue: oklch(0.62 0.2064 273.12); /*----- hsl(233, 100%, 69%) */
+  --color-darkGrayishBlue: oklch(0.44 0.0175 248.22); /*-- hsl(210, 10%, 33%) */
+  --color-grayishBlue: oklch(0.73 0.017 230.99); /*------ hsl(201, 11%, 66%) */
+
+  /* Font Family  */
+
+  --font-sans: "Bai Jamjuree", sans-serif;
+
+  /* Breakpoints  */
+  --breakpoint-sm: 30rem; /* 480px */
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 61rem; /* 976px */
+  --breakpoint-xl: 90rem; /* 1440px */
+}
+
+.section-container {
+  @apply max-w-6xl mx-auto text-center px-10;
+}
+
+.section-content {
+  @apply max-w-3xl mx-auto leading-9 text-center text-grayishBlue;
+}
+
+.button-container {
+  @apply flex flex-col justify-center w-full space-y-6 text-xl text-white md:flex-row md:space-y-0 md:space-x-4;
+}
+
+body {
+  background-image: url("../dist/images/bg-header-desktop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 576px) {
+  body {
+    background-image: url("../dist/images/bg-header-mobile.png");
+  }
+}
+
+@layer base {
+  /* Your base styles here */
+  h3 {
+    @apply mb-8 text-4xl font-bold text-darkGrayishBlue md:text-5xl;
+  }
+
+  h5 {
+    @apply mb-2 text-2xl font-bold text-darkGrayishBlue;
+  }
+}
+
+.ficon:hover {
+  filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg)
+    brightness(101%) contrast(94%);
+}
+
+@layer components {
+  /* Your component styles here */
+}
